@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>HelloWorld</title>
 </head>
 <body>
-<p>Hello world message</p>
+<p>Pokemon list</p>
+<div class="pokemon-grid">
+    <th:block th:each="pokemon : ${pokemons}">
+        <div class="pokemon-card"><p th:text="${pokemon.getName()}"/></div>
+    </th:block>
+</div>
 </body>
 </html>
