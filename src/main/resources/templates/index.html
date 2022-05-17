@@ -8,7 +8,11 @@
 <p>Pokemon list</p>
 <div class="pokemon-grid">
     <th:block th:each="pokemon : ${pokemons}">
-        <a th:href="@{'/pokemon/' + ${pokemon.id}}" class="pokemon-card"><p th:text="${pokemon.name}"/></a>
+        <a th:href="@{'/pokemon/' + ${pokemon.id}}" class="pokemon-card">
+            <img th:src="${pokemon.sprites.getFrontDefault()}"/>
+            <p th:text="${pokemon.id}"/>
+            <p th:text="${pokemon.name}"/>
+        </a>
     </th:block>
 </div>
 </body>
