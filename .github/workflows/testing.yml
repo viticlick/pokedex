@@ -9,5 +9,10 @@ jobs:
     steps:
       - name: workflow configure
         uses: actions/checkout@v2
+      - name: Set java version
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '16'
       - name: Verify project
         run: mvn verify
