@@ -7,5 +7,17 @@
 <body>
 <h1 th:text="${pokemon.name}"/>
 <img th:src="${pokemon.sprites.getFrontDefault()}"/>
+<div>
+    <p th:text="'weight:' + ${pokemon.weight}"/>
+    <p th:text="'height:' + ${pokemon.height}"/>
+    <div>
+        <p>Abilities:</p>
+        <ul>
+            <th:block th:each="ability : ${pokemon.abilities}">
+                <li th:text="${ability.ability.name}"/>
+            </th:block>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
