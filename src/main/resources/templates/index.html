@@ -3,18 +3,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Poked-ex</title>
-    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
 </head>
 <body>
 <p>Pokemon list</p>
-<div class="pokemon-grid">
+<ul class="pokemon-grid">
     <th:block th:each="pokemon : ${pokemons}">
-        <a th:href="@{'/pokemon/' + ${pokemon.id}}" class="pokemon-card zoom">
-            <img th:src="${pokemon.sprites.getFrontDefault()}"/>
-            <p th:text="${pokemon.id}"/>
-            <p th:text="${pokemon.name}"/>
-        </a>
+        <li class="pokemon-item">
+            <a th:href="@{'/pokemon/' + ${pokemon.id}}" class="pokemon-card zoom">
+                <img th:src="${pokemon.sprites.getFrontDefault()}"/>
+                <p th:text="${pokemon.id}"/>
+                <p th:text="${pokemon.name}"/>
+            </a>
+        </li>
     </th:block>
-</div>
+</ul>
 </body>
 </html>

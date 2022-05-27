@@ -7,6 +7,14 @@ body {
     flex-flow: wrap;
 }
 
+.pokemon-item {
+    list-style-type: none;
+}
+
+.pokemon-card {
+    display: block;
+}
+
 .zoom {
     padding: 40px;
     background-color: #9dd1ab;
