@@ -10,10 +10,12 @@
 <ul class="pokemon-grid">
     <th:block th:each="pokemon : ${pokemons}">
         <li class="pokemon-item">
-            <a th:href="@{'/pokemon/' + ${pokemon.id}}" class="pokemon-card zoom">
-                <img th:src="${pokemon.sprites.getFrontDefault()}"/>
-                <p th:text="${pokemon.id}"/>
-                <p th:text="${pokemon.name}"/>
+            <a th:href="@{'/pokemon/' + ${pokemon.id}}" class="pokemon-card">
+                <img th:src="${pokemon.sprites.getFrontDefault()}" th:alt="${pokemon.name} + ' image'"/>
+                <div class="pokemon-card-name">
+                    <p th:text="${pokemon.id}"/>
+                    <p th:text="${pokemon.name}"/>
+                </div>
             </a>
         </li>
     </th:block>
