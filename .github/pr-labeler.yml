@@ -1,4 +1,4 @@
-feature: 'feature/*'
+feature: feature/*
 fix: fix/*
 chore: chore/*
 stylesheets: css/*
